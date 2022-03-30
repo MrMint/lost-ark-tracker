@@ -17,6 +17,12 @@
       "*": ["node_modules/*"]
     },
     "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "custom.d.ts"]
 }

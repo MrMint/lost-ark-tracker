@@ -1,7 +1,25 @@
+@font-face {
+  font-family: "A";
+  font-weight: 400;
+  src: url("./common/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "A";
+  font-weight: 300;
+  src: url("./common/fonts/Roboto-Thin.ttf") format("truetype");
+}
+
+html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  font-family: "A";
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
