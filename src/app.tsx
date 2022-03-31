@@ -17,6 +17,9 @@ const theme = createTheme({
   },
   palette: {
     mode: "dark",
+    background: {
+      default: "#2c2b31",
+    },
   },
 });
 
@@ -24,7 +27,7 @@ const boxStyles = {
   height: "100%",
   fontFamily: "A",
   display: "flex",
-  bgcolor: "#2c2b31",
+  bgcolor: theme.palette.background.default,
 } as SxProps;
 
 function App() {
@@ -46,7 +49,6 @@ function App() {
                 >
                   <Route index element={<Dashboard />} />
                   <Route path="characters" element={<Characters />} />
-                  {/* <Route path="/characters/{id}" element={<Dashboard />} /> */}
                 </Route>
                 <Route path="/login" element={<UserSelect />} />
               </Routes>
