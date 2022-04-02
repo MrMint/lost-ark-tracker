@@ -58,7 +58,10 @@
                 {
                   "html": "./src/index.html",
                   "js": "./src/renderer.ts",
-                  "name": "main_window"
+                  "name": "main_window",
+                  "preload": {
+                    "js": "./src/preload.ts"
+                  }
                 }
               ]
             }
@@ -106,6 +109,7 @@
     "@mui/icons-material": "5.5.1",
     "@mui/material": "5.5.3",
     "@react-spring/web": "9.4.4",
+    "custom-electron-titlebar": "4.1.0",
     "date-fns": "2.28.0",
     "electron-squirrel-startup": "1.0.0",
     "immutable": "4.0.0",
