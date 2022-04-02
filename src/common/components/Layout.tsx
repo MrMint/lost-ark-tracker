@@ -1,6 +1,18 @@
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { css } from "@emotion/react";
-import { Dashboard, Menu, People } from "@mui/icons-material";
+import { Dashboard, Logout, Menu, People } from "@mui/icons-material";
 import {
   Link,
   LinkProps,
@@ -16,12 +28,15 @@ import { isNil } from "ramda";
 const containerStyle = css`
   display: flex;
   flex-grow: 1;
-  flex-direction: column;
   color: #fff;
 `;
 
 const childContainerStyle = css`
   padding: 1rem;
+`;
+
+const navGroupStyles = css`
+  flex-grow: 1;
 `;
 
 const NavLink = ({ children, to, ...props }: LinkProps) => {
@@ -46,25 +61,36 @@ const Layout = () => {
   const user = useRecoilValue(activeUser);
   return (
     <div css={containerStyle}>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <Menu />
-          </IconButton>
+      <Drawer variant="permanent" open={false} sx={{ width: "57px" }}>
+        <List>
           <NavLink to="/">
-            <Dashboard />
+            <Tooltip title="Dashboard" placement="right">
+              <ListItem button>
+                <ListItemIcon>
+                  <Dashboard />
+                </ListItemIcon>
+              </ListItem>
+            </Tooltip>
           </NavLink>
           <NavLink to="/Characters">
-            <People />
+            <Tooltip title="Characters" placement="right">
+              <ListItem button>
+                <ListItemIcon>
+                  <People />
+                </ListItemIcon>
+              </ListItem>
+            </Tooltip>
           </NavLink>
-          <Button onClick={() => setActiveUserId(null)}>Logout</Button>
-        </Toolbar>
-      </AppBar>
+          <Divider />
+          <Tooltip title="Log Out" placement="right">
+            <ListItem button onClick={() => setActiveUserId(null)}>
+              <ListItemIcon>
+                <Logout />
+              </ListItemIcon>
+            </ListItem>
+          </Tooltip>
+        </List>
+      </Drawer>
       <div css={childContainerStyle}>
         <Outlet />
       </div>
