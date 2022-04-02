@@ -2,6 +2,7 @@ import { Set } from "immutable";
 import { v4 as uuid } from "uuid";
 import { atom, selector } from "recoil";
 import { Regions, User } from "./types";
+import { isNil } from "ramda";
 
 export const usersState = atom({
   key: "users",
@@ -17,10 +18,17 @@ export const activeUserId = atom({
   default: null as string | null,
 });
 
+export const isAuthenticated = selector({
+  key: "isAuthenticated",
+  get: ({ get }) => !isNil(get(activeUserId)),
+});
+
 export const activeUser = selector({
   key: "activeUser",
   get: ({ get }) => {
     const id = get(activeUserId);
-    return get(usersState).find((x) => x.id === id);
+    const user = get(usersState).find((x) => x.id === id);
+    if (isNil(user)) throw new Error("Unable to find active user");
+    return user;
   },
 });

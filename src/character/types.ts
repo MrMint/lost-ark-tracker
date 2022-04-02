@@ -28,12 +28,17 @@ export class Rest extends Record({
   guardianRaid: 0,
 }) {}
 
+export class CharacterTask extends Record({
+  taskId: "",
+  count: 0,
+}) {}
+
 export class Character extends Record({
   id: "",
   name: "",
   server: Servers.Una,
   userId: "",
-  taskIds: Set<string>(),
+  tasks: Set<CharacterTask>(),
   rest: new Rest(),
   class: Classes.Artillerist,
   region: Regions.NAEast,

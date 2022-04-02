@@ -1,10 +1,12 @@
 import { Grid } from "@mui/material";
 import { useRecoilValue } from "recoil";
-import Berserker from "../../common/icons/Berserker.svg";
-import { charactersState } from "../atoms";
+import { activeUser } from "../../user/atoms";
 import CharacterCard from "./CharacterCard";
+import { charactersForUserId } from "../selectors";
+
 const Characters = () => {
-  const characters = useRecoilValue(charactersState);
+  const user = useRecoilValue(activeUser);
+  const characters = useRecoilValue(charactersForUserId(user.id));
   return (
     <Grid
       container

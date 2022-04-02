@@ -9,6 +9,13 @@ export const enum LimitTypes {
   Character = 1,
   Roster = 2,
 }
+export const enum TaskTypes {
+  AbyssalDungeon,
+  ChaosDungeon,
+  GuardianRaid,
+  UnasTask,
+  Custom,
+}
 
 export interface ILimit {
   window: LimitWindows;
@@ -21,6 +28,7 @@ export interface ITask {
   id: string;
   limit: ILimit;
   name: string;
+  type: TaskTypes;
 }
 
 export class Limit
@@ -41,6 +49,7 @@ export class AbyssalDungeon
       window: LimitWindows.Weekly,
       characters: 6,
     }),
+    type: TaskTypes.AbyssalDungeon,
   })
   implements ITask {}
 
@@ -50,6 +59,7 @@ export class ChaosDungeon
     name: "",
     characterLimit: null,
     limit: new Limit(),
+    type: TaskTypes.ChaosDungeon,
   })
   implements ITask {}
 
@@ -58,6 +68,7 @@ export class GuardianRaid
     id: "",
     name: "",
     limit: new Limit(),
+    type: TaskTypes.GuardianRaid,
   })
   implements ITask {}
 
@@ -66,6 +77,7 @@ export class UnasTask
     id: "",
     name: "",
     limit: new Limit(),
+    type: TaskTypes.UnasTask,
   })
   implements ITask {}
 
@@ -74,5 +86,13 @@ export class CustomTask
     id: "",
     name: "",
     limit: new Limit(),
+    type: TaskTypes.Custom,
   })
   implements ITask {}
+
+export interface ICompletedTask {
+  id: string;
+  taskId: string;
+  completedOn: Date;
+  characterId: string;
+}
