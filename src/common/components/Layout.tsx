@@ -1,18 +1,14 @@
 import {
-  AppBar,
-  Button,
   Divider,
-  Drawer,
-  IconButton,
   List,
   ListItem,
   ListItemIcon,
-  Toolbar,
+  Theme,
   Tooltip,
-  Typography,
+  useTheme,
 } from "@mui/material";
 import { css } from "@emotion/react";
-import { Dashboard, Logout, Menu, People } from "@mui/icons-material";
+import { Dashboard, Logout, People } from "@mui/icons-material";
 import {
   Link,
   LinkProps,
@@ -22,8 +18,6 @@ import {
 } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { activeUser, activeUserId } from "../../user/atoms";
-import { regionDisplayName } from "../../user/utility";
-import { isNil } from "ramda";
 
 const containerStyle = css`
   display: flex;
@@ -35,18 +29,25 @@ const childContainerStyle = css`
   padding: 1rem;
 `;
 
-const navGroupStyles = css`
-  flex-grow: 1;
+const navBarStyle = (theme: Theme) => css`
+  display: flex;
+  width: 57px;
+  overflow: hidden;
+  background-color: ${theme.palette.background.paper};
 `;
 
 const NavLink = ({ children, to, ...props }: LinkProps) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
-
+  const theme = useTheme();
   return (
     <div>
       <Link
-        style={{ textDecoration: match ? "underline" : "none" }}
+        style={{
+          color: match
+            ? theme.palette.text.primary
+            : theme.palette.text.secondary,
+        }}
         to={to}
         {...props}
       >
@@ -59,14 +60,15 @@ const NavLink = ({ children, to, ...props }: LinkProps) => {
 const Layout = () => {
   const [userId, setActiveUserId] = useRecoilState(activeUserId);
   const user = useRecoilValue(activeUser);
+  const theme = useTheme();
   return (
     <div css={containerStyle}>
-      <Drawer variant="permanent" open={false} sx={{ width: "57px" }}>
-        <List>
+      <div css={navBarStyle(theme)}>
+        <List sx={{ width: "57px" }}>
           <NavLink to="/">
             <Tooltip title="Dashboard" placement="right">
               <ListItem button>
-                <ListItemIcon>
+                <ListItemIcon sx={{ color: "inherit" }}>
                   <Dashboard />
                 </ListItemIcon>
               </ListItem>
@@ -75,7 +77,7 @@ const Layout = () => {
           <NavLink to="/Characters">
             <Tooltip title="Characters" placement="right">
               <ListItem button>
-                <ListItemIcon>
+                <ListItemIcon sx={{ color: "inherit" }}>
                   <People />
                 </ListItemIcon>
               </ListItem>
@@ -84,13 +86,13 @@ const Layout = () => {
           <Divider />
           <Tooltip title="Log Out" placement="right">
             <ListItem button onClick={() => setActiveUserId(null)}>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "inherit" }}>
                 <Logout />
               </ListItemIcon>
             </ListItem>
           </Tooltip>
         </List>
-      </Drawer>
+      </div>
       <div css={childContainerStyle}>
         <Outlet />
       </div>

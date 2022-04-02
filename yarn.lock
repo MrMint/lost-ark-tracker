@@ -2622,6 +2622,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/history@npm:^4.7.11":
+  version: 4.7.11
+  resolution: "@types/history@npm:4.7.11"
+  checksum: c92e2ba407dcab0581a9afdf98f533aa41b61a71133420a6d92b1ca9839f741ab1f9395b17454ba5b88cb86020b70b22d74a1950ccfbdfd9beeaa5459fdc3464
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^6.0.0":
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
@@ -2748,6 +2755,27 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 6abb7c47d54f012272650df8a962a28bd82f219291e5ef8b4dfa7fe0bb98ae243b060bf9fbe8ceff6213141794855a006db194b490b00ffd15842ae19d0ce1f0
+  languageName: node
+  linkType: hard
+
+"@types/react-router-dom@npm:5.3.3":
+  version: 5.3.3
+  resolution: "@types/react-router-dom@npm:5.3.3"
+  dependencies:
+    "@types/history": ^4.7.11
+    "@types/react": "*"
+    "@types/react-router": "*"
+  checksum: 28c4ea48909803c414bf5a08502acbb8ba414669b4b43bb51297c05fe5addc4df0b8fd00e0a9d1e3535ec4073ef38aaafac2c4a2b95b787167d113bc059beff3
+  languageName: node
+  linkType: hard
+
+"@types/react-router@npm:*":
+  version: 5.1.18
+  resolution: "@types/react-router@npm:5.1.18"
+  dependencies:
+    "@types/history": ^4.7.11
+    "@types/react": "*"
+  checksum: f08b37ee822f9f9ff904ffd0778fe2bb7c717ed3ee311610382ee024d02a35169bd3301ecde863cac21aae8fdee919501e8ea22bad0260c02c10cfbdba5c71be
   languageName: node
   linkType: hard
 
@@ -4486,7 +4514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"custom-electron-titlebar@npm:^4.1.0":
+"custom-electron-titlebar@npm:4.1.0":
   version: 4.1.0
   resolution: "custom-electron-titlebar@npm:4.1.0"
   peerDependencies:
@@ -7479,12 +7507,13 @@ __metadata:
     "@types/ramda": 0.28.5
     "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
+    "@types/react-router-dom": 5.3.3
     "@types/uuid": 8.3.4
     "@typescript-eslint/eslint-plugin": 5.17.0
     "@typescript-eslint/parser": 5.17.0
     "@vercel/webpack-asset-relocator-loader": 1.7.2
     css-loader: 6.7.1
-    custom-electron-titlebar: ^4.1.0
+    custom-electron-titlebar: 4.1.0
     date-fns: 2.28.0
     electron: 18.0.0
     electron-squirrel-startup: 1.0.0
