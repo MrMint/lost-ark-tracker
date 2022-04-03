@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { useRecoilValue } from "recoil";
-import { activeUser } from "../../user/atoms";
+import { activeUser } from "src/user/atoms";
 import CharacterCard from "./CharacterCard";
 import { charactersForUserId } from "../selectors";
 

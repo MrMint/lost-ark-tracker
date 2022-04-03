@@ -5,7 +5,7 @@ import { activeUserId, usersState } from "../atoms";
 import CreateUser from "./CreateUser";
 import UserSelectCard from "./UserSelectCard";
 import { isNil } from "ramda";
-import { LoginState } from "../../common/types";
+import { LoginState } from "src/common/types";
 import { useEffect } from "react";
 
 const UserSelect = () => {

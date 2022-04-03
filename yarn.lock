@@ -2724,12 +2724,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ramda@npm:0.28.5":
-  version: 0.28.5
-  resolution: "@types/ramda@npm:0.28.5"
+"@types/ramda@npm:0.28.7":
+  version: 0.28.7
+  resolution: "@types/ramda@npm:0.28.7"
   dependencies:
     ts-toolbelt: ^6.15.1
-  checksum: 9ef4ff8a6062d00372d3b305fc352f97152ce77ea3540700e3f25707eb641311bc1d45450d43f7037a327b4ccaed2aa4c1dd18bb933ca05e041980731f570240
+  checksum: 0ee50cbd964d45ae75fdfc904113859d0abd7ceabd193ffaceeda3c80669a18fadc4680ea9f06f8ae2d3aa988513535dbff26fc6ee0a5b803c2106b1de8d0c4c
   languageName: node
   linkType: hard
 
@@ -4548,7 +4548,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2":
+"debug@npm:4, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -5045,16 +5045,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:18.0.0":
-  version: 18.0.0
-  resolution: "electron@npm:18.0.0"
+"electron@npm:18.0.1":
+  version: 18.0.1
+  resolution: "electron@npm:18.0.1"
   dependencies:
     "@electron/get": ^1.13.0
     "@types/node": ^16.11.26
     extract-zip: ^1.0.3
   bin:
     electron: cli.js
-  checksum: 22a871e0ec6d192607576cbee8ccf089a2c6f6a51278360e4051a413ae8f9d50671c9cadae8465196576ee020da9efd55be52faf48b85cd700b57099f5360fcc
+  checksum: 90d2e7d640643edcf41ddfeedc0a0e535154b68e039fe561dc208895497369d9afcf7c2cf3142d196055718d21cb100eb94360ee6356c911a1019e01d93cebbd
   languageName: node
   linkType: hard
 
@@ -5252,6 +5252,22 @@ __metadata:
     debug: ^3.2.7
     resolve: ^1.20.0
   checksum: 6266733af1e112970e855a5bcc2d2058fb5ae16ad2a6d400705a86b29552b36131ffc5581b744c23d550de844206fb55e9193691619ee4dbf225c4bde526b1c8
+  languageName: node
+  linkType: hard
+
+"eslint-import-resolver-typescript@npm:2.7.1":
+  version: 2.7.1
+  resolution: "eslint-import-resolver-typescript@npm:2.7.1"
+  dependencies:
+    debug: ^4.3.4
+    glob: ^7.2.0
+    is-glob: ^4.0.3
+    resolve: ^1.22.0
+    tsconfig-paths: ^3.14.1
+  peerDependencies:
+    eslint: "*"
+    eslint-plugin-import: "*"
+  checksum: 1d81b657b1f73bf95b8f0b745c0305574b91630c1db340318f3ca8918e206fce20a933b95e7c419338cc4452cb80bb2b2d92acaf01b6aa315c78a332d832545c
   languageName: node
   linkType: hard
 
@@ -7503,7 +7519,7 @@ __metadata:
     "@pmmmwh/react-refresh-webpack-plugin": 0.5.4
     "@react-spring/web": 9.4.4
     "@svgr/webpack": 6.2.1
-    "@types/ramda": 0.28.5
+    "@types/ramda": 0.28.7
     "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
     "@types/react-router-dom": 5.3.3
@@ -7514,24 +7530,25 @@ __metadata:
     css-loader: 6.7.1
     custom-electron-titlebar: 4.1.0
     date-fns: 2.28.0
-    electron: 18.0.0
+    electron: 18.0.1
     electron-squirrel-startup: 1.0.0
     eslint: 8.12.0
     eslint-config-prettier: 8.5.0
+    eslint-import-resolver-typescript: 2.7.1
     eslint-plugin-import: 2.25.4
     eslint-plugin-react: 7.29.4
     fork-ts-checker-webpack-plugin: 7.2.1
     immutable: 4.0.0
     node-loader: 2.0.0
-    prettier: 2.6.1
+    prettier: 2.6.2
     ramda: 0.28.0
     react: 18.0.0
     react-dom: 18.0.0
-    react-hook-form: 7.28.1
+    react-hook-form: 7.29.0
     react-refresh: 0.11.0
     react-refresh-typescript: 2.0.3
-    react-router-dom: 6.2.2
-    recoil: 0.6.1
+    react-router-dom: 6.3.0
+    recoil: 0.7.0
     style-loader: 3.3.1
     ts-loader: 9.2.8
     typescript: 4.6.3
@@ -8856,12 +8873,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.6.1":
-  version: 2.6.1
-  resolution: "prettier@npm:2.6.1"
+"prettier@npm:2.6.2":
+  version: 2.6.2
+  resolution: "prettier@npm:2.6.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 78be1f8a3ddfad7c3d8a854b6c8941a3bb1ddfca4225c38d778e0fe1029a55368f71b3bbefff82c689015fbb4d391ec44add957f01308ad2725e01a7c1f37cb6
+  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
   languageName: node
   linkType: hard
 
@@ -9075,12 +9092,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:7.28.1":
-  version: 7.28.1
-  resolution: "react-hook-form@npm:7.28.1"
+"react-hook-form@npm:7.29.0":
+  version: 7.29.0
+  resolution: "react-hook-form@npm:7.29.0"
   peerDependencies:
-    react: ^16.8.0 || ^17
-  checksum: 176e653f3c5c1882125b6d51d3b2258c7120202227b91edbf74708eb3f0d455b3c827f1b6c236cdf208de82871b14e86d9aeacbd44c418bcf591b2346721156f
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 4379f972c916d01f4706c27c0fb207b1676b382fc4803ee557edf77cb2355ff320a659940325fda81c1f4fd799e685a6e228577c1050e5b8c32e815884d0defe
   languageName: node
   linkType: hard
 
@@ -9115,27 +9132,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:6.2.2":
-  version: 6.2.2
-  resolution: "react-router-dom@npm:6.2.2"
+"react-router-dom@npm:6.3.0":
+  version: 6.3.0
+  resolution: "react-router-dom@npm:6.3.0"
   dependencies:
     history: ^5.2.0
-    react-router: 6.2.2
+    react-router: 6.3.0
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: 83c5105af923c4f8af65a6de98283a95f46ffa643fd0c1a5005647c2c3deb946dae52dda32dc00cfcc3659517b08be806ff02ff03173361dba3d824850053e99
+  checksum: 77603a654f8a8dc7f65535a2e5917a65f8d9ffcb06546d28dd297e52adcc4b8a84377e0115f48dca330b080af2da3e78f29d590c89307094d36927d2b1751ec3
   languageName: node
   linkType: hard
 
-"react-router@npm:6.2.2":
-  version: 6.2.2
-  resolution: "react-router@npm:6.2.2"
+"react-router@npm:6.3.0":
+  version: 6.3.0
+  resolution: "react-router@npm:6.3.0"
   dependencies:
     history: ^5.2.0
   peerDependencies:
     react: ">=16.8"
-  checksum: 1a2e7006d4d56bfae8ff11dd5ec15e8049578864dfb2764652510eb0ce4af26a8949790a3732c4f7beb14bcb6500469ea18841b8cfc953e09828e4e4113922f0
+  checksum: 7be673f5e72104be01e6ab274516bdb932efd93305243170690f6560e3bd1035dd1df3d3c9ce1e0f452638a2529f43a1e77dcf0934fc8031c4783da657be13ca
   languageName: node
   linkType: hard
 
@@ -9231,9 +9248,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recoil@npm:0.6.1":
-  version: 0.6.1
-  resolution: "recoil@npm:0.6.1"
+"recoil@npm:0.7.0":
+  version: 0.7.0
+  resolution: "recoil@npm:0.7.0"
   dependencies:
     hamt_plus: 1.0.2
   peerDependencies:
@@ -9243,7 +9260,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 823c098e30f9b711f6e5d73ae3bf3c6d43ae6342998825f00ee18b01c88f499f7216fd59b472bd5ad349c6475e698e2937ad73b82499e31535bd63e431244146
+  checksum: e190db5153e322ba8ca824e97701e756c41681080da23f3e87d104544da2e8c9eea44ada8a36857ef9a1ade368dfe6ea3af7d51796441b08c40272c0a1386c81
   languageName: node
   linkType: hard
 
@@ -9437,7 +9454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.6, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.20.0":
+"resolve@npm:^1.1.6, resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.20.0, resolve@npm:^1.22.0":
   version: 1.22.0
   resolution: "resolve@npm:1.22.0"
   dependencies:
@@ -9460,7 +9477,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>":
   version: 1.22.0
   resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"
   dependencies:
@@ -10556,7 +10573,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^3.12.0":
+"tsconfig-paths@npm:^3.12.0, tsconfig-paths@npm:^3.14.1":
   version: 3.14.1
   resolution: "tsconfig-paths@npm:3.14.1"
   dependencies:

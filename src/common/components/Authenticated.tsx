@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import { isAuthenticated } from "../../user/atoms";
+import { isAuthenticated } from "src/user/atoms";
 
 type AuthenticatedProps = {
   children: ReactNode;

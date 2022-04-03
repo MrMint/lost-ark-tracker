@@ -2,7 +2,7 @@ import { Map, Set } from "immutable";
 import { atom } from "recoil";
 import { Character, CharacterTask, Classes, Rest, Servers } from "./types";
 import { v4 as uuid } from "uuid";
-import { Regions } from "../user/types";
+import { Regions } from "src/user/types";
 
 export const charactersState = atom({
   key: "characters",

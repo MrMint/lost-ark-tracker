@@ -12,8 +12,11 @@ module.exports = {
     rules,
   },
   plugins: plugins,
+  stats: {
+    errorDetails: true,
+  },
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css"],
-    modules: [path.resolve("./node_modules")],
+    modules: [path.resolve("./node_modules"), path.resolve("./")],
   },
 };

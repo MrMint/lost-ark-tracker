@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import { Classes } from "../../character/types";
+import { Classes } from "src/character/types";
 import Berserker from "../icons/Berserker.svg";
 
 type ClassAvatarProps = {

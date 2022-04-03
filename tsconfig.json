@@ -15,6 +15,7 @@
     "strictNullChecks": true,
     "lib": ["es6", "dom"],
     "paths": {
+      "src/*": ["./src/*"],
       "*": ["node_modules/*"]
     },
     "jsx": "react-jsx",

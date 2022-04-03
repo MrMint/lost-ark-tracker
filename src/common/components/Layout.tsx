@@ -17,7 +17,7 @@ import {
   useResolvedPath,
 } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { activeUser, activeUserId } from "../../user/atoms";
+import { activeUser, activeUserId } from "src/user/atoms";
 
 const containerStyle = css`
   display: flex;

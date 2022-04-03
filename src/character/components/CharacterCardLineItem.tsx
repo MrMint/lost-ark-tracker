@@ -1,4 +1,4 @@
-import { TaskTypes } from "../../task/type";
+import { TaskTypes } from "src/task/type";
 
 type CharacterCardLineItemProps = {
   type: TaskTypes;
