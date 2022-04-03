@@ -27,6 +27,8 @@ const containerStyle = css`
 
 const childContainerStyle = css`
   padding: 1rem;
+  overflow-y: auto;
+  flex-grow: 1;
 `;
 
 const navBarStyle = (theme: Theme) => css`
@@ -36,9 +38,13 @@ const navBarStyle = (theme: Theme) => css`
   background-color: ${theme.palette.background.paper};
 `;
 
-const NavLink = ({ children, to, ...props }: LinkProps) => {
+interface NavLinkProps extends LinkProps {
+  exact?: boolean;
+}
+
+const NavLink = ({ exact = false, children, to, ...props }: NavLinkProps) => {
   const resolved = useResolvedPath(to);
-  const match = useMatch({ path: resolved.pathname, end: true });
+  const match = useMatch({ path: resolved.pathname, end: exact });
   const theme = useTheme();
   return (
     <div>
@@ -65,7 +71,7 @@ const Layout = () => {
     <div css={containerStyle}>
       <div css={navBarStyle(theme)}>
         <List sx={{ width: "57px" }}>
-          <NavLink to="/">
+          <NavLink to="/" exact>
             <Tooltip title="Dashboard" placement="right">
               <ListItem button>
                 <ListItemIcon sx={{ color: "inherit" }}>

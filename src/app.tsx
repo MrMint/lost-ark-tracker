@@ -2,7 +2,6 @@ import { createRoot } from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import { isNil } from "ramda";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import CssBaseline from "@mui/material/CssBaseline";
 import UserSelect from "./user/components/UserSelect";
 import Layout from "./common/components/Layout";
 import { ThemeProvider, createTheme, Box } from "@mui/material";
@@ -10,10 +9,13 @@ import { SxProps } from "@mui/system";
 import Dashboard from "./common/components/Dashboard";
 import Authenticated from "./common/components/Authenticated";
 import Characters from "./character/components/Characters";
+import CharacterOverview from "./character/components/CharacterOverview";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "A",
+    allVariants: {
+      fontFamily: "A",
+    },
   },
   palette: {
     mode: "dark",
@@ -25,7 +27,6 @@ const theme = createTheme({
 
 const boxStyles = {
   height: "100%",
-  fontFamily: "A",
   display: "flex",
   bgcolor: theme.palette.background.default,
 } as SxProps;
@@ -33,7 +34,6 @@ const boxStyles = {
 function App() {
   return (
     <>
-      <CssBaseline />
       <ThemeProvider theme={theme}>
         <Box sx={boxStyles}>
           <RecoilRoot>
@@ -49,6 +49,10 @@ function App() {
                 >
                   <Route index element={<Dashboard />} />
                   <Route path="characters" element={<Characters />} />
+                  <Route
+                    path="characters/:id"
+                    element={<CharacterOverview />}
+                  />
                 </Route>
                 <Route path="/login" element={<UserSelect />} />
               </Routes>
