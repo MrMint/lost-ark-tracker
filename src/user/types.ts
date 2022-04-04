@@ -1,12 +1,6 @@
-import { Record } from 'immutable';
-
-export const enum Regions {
-  NAEast = 0,
-  NAWest = 1,
-}
+import { Record } from "immutable";
 
 export class User extends Record({
   id: "",
-  name: "", 
-  region: Regions.NAEast,
-}) {};
+  name: "",
+}) {}

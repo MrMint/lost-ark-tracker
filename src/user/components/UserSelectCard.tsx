@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import { User } from "../types";
 import { useSetRecoilState } from "recoil";
 import { activeUserId } from "../atoms";
-import { regionDisplayName } from "../utility";
 
 const cardStyle = css`
   display: flex;
@@ -19,11 +18,6 @@ const nameStyle = css`
   font-size: 2rem;
   margin-top: 1rem;
   font-weight: 300;
-`;
-
-const regionStyle = css`
-  font-size: 1rem;
-  margin-top: 0.5rem;
 `;
 
 type UserSelectProps = {
@@ -43,7 +37,6 @@ const UserSelectCard = ({ user }: UserSelectProps) => {
         sx={{ height: "100px", width: "100px", bgcolor: "#CAC4CE" }}
       />
       <div css={nameStyle}>{user.name}</div>
-      <div css={regionStyle}>{regionDisplayName(user.region)}</div>
     </Paper>
   );
 };

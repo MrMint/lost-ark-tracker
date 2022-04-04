@@ -1,4 +1,4 @@
-import { Card, CardActionArea, Theme, useTheme } from "@mui/material";
+import { Card, CardActionArea, Divider, Theme, useTheme } from "@mui/material";
 import { css } from "@emotion/react";
 import { Character, Classes } from "../types";
 import RestBonus from "./RestBonus";
@@ -39,16 +39,24 @@ const characterClassStyle = (theme: Theme) => css`
 
 const cardBodyStyle = css`
   flex-grow: 1;
+  width: 100%;
 `;
 
 const cardFooterStyle = css`
   width: 100%;
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
 `;
 const cardActionAreaStyle = css`
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+const taskGroupStyle = css`
+  min-width: 100px;
 `;
 
 const taskProgressStyles = css`
@@ -59,7 +67,7 @@ const taskProgressStyles = css`
 `;
 
 const taskProgressHeaderStyle = css`
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -97,8 +105,9 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
         </div>
         <div css={cardBodyStyle}>
           <div css={taskProgressStyles}>
-            <div>
+            <div css={taskGroupStyle}>
               <div css={taskProgressHeaderStyle}>Daily</div>
+              <Divider light variant="middle" sx={{ marginBottom: ".5rem" }} />
               {tasks
                 .filter((x) => x.limit.window == LimitWindows.Daily)
                 .groupBy((x) => x.type)
@@ -115,8 +124,9 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
                 })
                 .toSet()}
             </div>
-            <div>
+            <div css={taskGroupStyle}>
               <div css={taskProgressHeaderStyle}>Weekly</div>
+              <Divider light variant="middle" sx={{ marginBottom: ".5rem" }} />
               {tasks
                 .filter((x) => x.limit.window == LimitWindows.Weekly)
                 .groupBy((x) => x.type)
@@ -136,6 +146,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
           </div>
         </div>
         <div css={cardFooterStyle}>
+          <Divider light variant="fullWidth" />
           <RestBonus
             title="Chaos Dungeon"
             bonus={character.rest.chaosDungeon}
@@ -144,6 +155,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
             title="Guardian Raid"
             bonus={character.rest.guardianRaid}
           />
+          <RestBonus title="Unas Task" bonus={character.rest.unasTask} />
         </div>
       </CardActionArea>
     </Card>

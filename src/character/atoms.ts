@@ -1,8 +1,14 @@
 import { Map, Set } from "immutable";
 import { atom } from "recoil";
-import { Character, CharacterTask, Classes, Rest, Servers } from "./types";
+import {
+  Character,
+  CharacterTask,
+  Classes,
+  Regions,
+  Rest,
+  Servers,
+} from "./types";
 import { v4 as uuid } from "uuid";
-import { Regions } from "src/user/types";
 
 export const charactersState = atom({
   key: "characters",
@@ -11,7 +17,7 @@ export const charactersState = atom({
       id: "mint-character-id",
       name: "Mint",
       class: Classes.Striker,
-      rest: new Rest({ chaosDungeon: 3, guardianRaid: 1 }),
+      rest: new Rest({ chaosDungeon: 0, guardianRaid: 40, unasTask: 50 }),
       server: Servers.Una,
       region: Regions.NAEast,
       tasks: Set<CharacterTask>([

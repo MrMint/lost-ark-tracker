@@ -1,5 +1,4 @@
 import { Record, Set } from "immutable";
-import { Regions } from "../user/types";
 
 export enum Classes {
   Berserker = 0,
@@ -19,13 +18,19 @@ export enum Classes {
   Deathblade = 14,
 }
 
-export const enum Servers {
+export const enum Regions {
+  NAEast = 0,
+  NAWest = 1,
+}
+
+export enum Servers {
   Una,
 }
 
 export class Rest extends Record({
   chaosDungeon: 0,
   guardianRaid: 0,
+  unasTask: 0,
 }) {}
 
 export class CharacterTask extends Record({

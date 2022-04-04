@@ -1,15 +1,15 @@
 import { Set } from "immutable";
 import { v4 as uuid } from "uuid";
 import { atom, selector } from "recoil";
-import { Regions, User } from "./types";
+import { User } from "./types";
 import { isNil } from "ramda";
 
 export const usersState = atom({
   key: "users",
   default: Set<User>([
-    new User({ id: "mint", name: "mint", region: Regions.NAEast }),
-    new User({ id: uuid(), name: "XSV", region: Regions.NAWest }),
-    new User({ id: uuid(), name: "hunter", region: Regions.NAEast }),
+    new User({ id: "mint", name: "mint" }),
+    new User({ id: uuid(), name: "XSV" }),
+    new User({ id: uuid(), name: "hunter" }),
   ]),
 });
 
